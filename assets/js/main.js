@@ -1,36 +1,12 @@
 
-            /* PERSONNE */
-class Personne {
-    constructor(nom,lieu,argent){
-        this.nom=nom
-        this.lieu=lieu
-        this.argent=argent
-        this.mainDroite=[]
-        this.mainGauche=[]
-        this.seDeplacer = (depart,arrive) =>{
-            this.lieu = arrive,
-            arrive.personnes.push(depart.personnes.shift())  
-}
-        this.payerArticle =(article) => {
+import  {Personne, Lieu, Ingredients} from "./class.js"
 
-        }
-        this.couper =(ingredient) => {
-            couteau.couper(ingredient)
-        }
-        this.melanger=(nomMelange)=>{
-            bol.melanger(nomMelange)
-        }
-    }
-}
+
+            /* PERSONNE */
+
 let mahad = new Personne ("mahad","",300)
                 /* LIEU */
-class Lieu {
-    constructor(nom,personnes,paniers){
-        this.nom=nom
-        this.personnes=personnes
-        this.paniers=paniers
-    }
-}
+
 
 let epicerie = new Lieu("Epicerie",[],[
     {type : "Panier 1", contenu : []},
@@ -82,14 +58,6 @@ let bol = {
 
             /* Ingredients */
 
-class Ingredients {
-    constructor(nom,etat,prix){
-        this.nom=nom
-        this.etat=etat
-        this.prix=prix
-    }
-
-}
 
 let oignon = new Ingredients ("oignon","coupé",10)
 let oeuf = new Ingredients ("oeuf","entier",20)
@@ -141,13 +109,13 @@ console.log(`${mahad.nom} est actuellement à la  ${mahad.lieu.nom}`)
 /* // Vérifier chaque ingrédient dans le bol et le couper seulement s'il est entier ! Pour ça on utilise la méthode couper de personnage
  */
 
-mahad.couper(bol.contenu)
+mahad.couper(bol.contenu,couteau)
 console.log(bol.contenu);
 
 /* Mélanger le contenu du bol avec la méthode melanger. on va nommer ce mélange une 'omelette' (à passer en param). */
 
 
-mahad.melanger("omelette")
+mahad.melanger("omelette",bol)
 console.log("elle est pas cuite fraté " +bol.contenu);
 /* Cuire l'omelette avec la méthode de la poele  */
 
